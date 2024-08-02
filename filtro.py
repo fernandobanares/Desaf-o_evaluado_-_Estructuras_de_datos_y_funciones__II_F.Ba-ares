@@ -9,14 +9,25 @@ precios = {'Notebook': 700000,
 
 umbral = float(sys.argv[1])
 
-productos = []
-
-def mayor_a():
+if len(sys.argv) > 2:
+    umbral_segundo = str(sys.argv[2]).lower()
+else:
+    umbral_segundo = "mayor" 
+    
+def filtrar_precios():
     resultado = {}
-    for k, v in precios.items():
-        if v > umbral:
-            resultado[k] = v
-            return resultado
+    if umbral_segundo == "menor":
+        for k, v in precios.items():
+            if v < umbral:
+                resultado[k] = v
+    elif umbral_segundo == "mayor":
+        for k, v in precios.items():
+            if v > umbral:
+                resultado[k] = v
+    else:
+        raise ValueError("Lo sentimos, no es una operación válida.")
+    
+    return resultado
 
-resultado = mayor_a()
-print(resultado)
+mayores_o_menores = filtrar_precios()
+print(f"Los productos filtrados son: {', '.join(mayores_o_menores.keys())}")
