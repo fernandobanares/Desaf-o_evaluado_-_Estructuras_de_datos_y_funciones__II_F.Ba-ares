@@ -15,8 +15,9 @@ def sobre_promedio():
     for i, v in enumerate(velocidad):
         if v > media:
             sobre.append(i)
-
+    print(sobre)
+    
 sobre_promedio()
-print("Índices de velocidades sobre la media:", sobre)
+
             
             
