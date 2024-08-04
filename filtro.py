@@ -27,7 +27,7 @@ def filtrar_precios():
                 resultado[k] = v
         print(f"Los productos mayores al umbral son: {', '.join(resultado.keys())}")
     else:
-        raise ValueError("Lo sentimos, no es una operación válida.")
+        print("Lo sentimos, no es una operación válida.")
     
 filtrar_precios()
 
