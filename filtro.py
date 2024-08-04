@@ -20,14 +20,15 @@ def filtrar_precios():
         for k, v in precios.items():
             if v < umbral:
                 resultado[k] = v
+        print(f"Los productos menores al umbral son: {', '.join(resultado.keys())}")
     elif umbral_segundo == "mayor":
         for k, v in precios.items():
             if v > umbral:
                 resultado[k] = v
+        print(f"Los productos mayores al umbral son: {', '.join(resultado.keys())}")
     else:
         raise ValueError("Lo sentimos, no es una operación válida.")
     
-    return resultado
+filtrar_precios()
 
-mayores_o_menores = filtrar_precios()
-print(f"Los productos filtrados son: {', '.join(mayores_o_menores.keys())}")
+
